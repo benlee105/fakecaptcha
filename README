@@ -1,0 +1,1 @@
+Fake Captcha examples using document.execCommand("copy") and navigator.clipboard.WriteText(text)
